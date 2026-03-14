@@ -1,13 +1,7 @@
-<p>
-    Olá, {{ $name }}
-</p>
-<p>
-    Meus hábitos são:
-</p>
-<ui>
-    @foreach ($habits as $habit)
-        <li>
-            {{ $habit }}
-        </li>
-    @endforeach
-</ui>
+<x-layout>
+    <main class="py-10">
+        <h1>
+            Veja seus hábitos ganharem vida
+        </h1>
+    </main>
+</x-layout>
