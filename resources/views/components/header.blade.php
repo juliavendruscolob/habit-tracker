@@ -1,8 +1,24 @@
-<header class="bg-white border-bottom border-2 flex itens-center justify-between p-4">
+<header class="bg-white border-b-2 flex items-center justify-between p-4">
     <div>
         logo
     </div>
-    <div>
+
+    <div class="flex items-center gap-4">
         github
+
+        @auth
+            <form action="/logout" method="POST" class="inline">
+                @csrf
+                <button type="submit" class="bg-white p-2 border-2">
+                    Sair
+                </button>
+            </form>
+        @endauth
+
+        @guest
+            <a href="/login" class="bg-white p-2 border-2">
+                Login
+            </a>
+        @endguest
     </div>
 </header>
