@@ -26,19 +26,24 @@
             </h2>
             <ul class="flex flex-col gap-2 list-disc list-inside">
                 @forelse ($habits as $habit)
+                    <li class="flex items-center gap-3 mb-2">
+                        <span class="h-1.5 w-1.5 rounded-full bg-black flex-shrink-0"></span>
 
-                    <li class="pl-4 text-black">
-                        <span class="inline">
+                        <span class="text-black">
                             {{ $habit->name }}
                         </span>
+
+                        <form action="{{ route('habit.destroy', $habit) }}" method="POST" class="flex items-center">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit"
+                                class="bg-red-500 text-white p-1 px-2 text-[10px] font-bold rounded cursor-pointer hover:bg-red-600 transition-colors">
+                                Apagar
+                            </button>
+                        </form>
                     </li>
                 @empty
-                    <p>
-                        Ainda não há nenhum hábito cadastrado.
-                    </p>
-                    <a href="{{ route('habit.create') }}" class="bg-white p-2 border-2">
-                        Cadastre um novo hábito
-                    </a>
                 @endforelse
             </ul>
         </div>
