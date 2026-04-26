@@ -4,7 +4,7 @@
             Dashboard
         </h1>
 
-        <a href="{{ route('habit.create') }}" class="p-2 border-2 bg-white font-bold inline-block mb-4">
+        <a href="{{ route('habits.create') }}" class="p-2 border-2 bg-white font-bold inline-block mb-4">
             Cadastrar hábito
         </a>
 
@@ -33,7 +33,12 @@
                             {{ $habit->name }}
                         </span>
 
-                        <form action="{{ route('habit.destroy', $habit) }}" method="POST" class="flex items-center">
+                        <a href="{{ route('habits.edit', $habit->id) }}"
+                            class="bg-white text-blue-600 p-1 px-2 text-[10px] font-bold rounded border border-gray-200 shadow-sm">
+                            Editar
+                        </a>
+
+                        <form action="{{ route('habits.destroy', $habit) }}" method="POST" class="flex items-center">
                             @csrf
                             @method('DELETE')
 

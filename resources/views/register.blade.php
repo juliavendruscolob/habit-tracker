@@ -71,7 +71,7 @@
                 <button type="submit" class="bg-white border-2 p-2"> Cadastrar </button>
             </form>
             <p class="text-center mt-2">
-                Já tem uma conta? <a href="{{ route('site.login') }}" class="underline hover:opacity-50 transition">
+                Já tem uma conta? <a href="{{ route('login') }}" class="underline hover:opacity-50 transition">
                     Faça login
                 </a>
             </p>

@@ -26,7 +26,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             //envia para home
-            return redirect()->intended('/dashboard');
+            return redirect()->intended(route('habits.index'));
         }
         //early return: técnica de retornar o erro o mais cedo possível para evitar o uso de "else" e aninhamento desnecessário
         return back()->withErrors([
