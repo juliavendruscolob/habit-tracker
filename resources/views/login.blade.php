@@ -1,14 +1,14 @@
 <x-layout>
     <main class="py-10">
 
-        <section class="bg-white max-w-[600px] mx-auto p-10 pb-6 border-2 mt-4">
+        <section class="bg-white max-w-[600px] mx-auto p-10 pb-6 mt-4 habit-shadow-lg">
             <h1 class="font-bold text-3xl">
                 Faça Login
             </h1>
             <p>
                 Insira seus dados para acessar
             </p>
-            <form action={{ route('auth.login') }} method="POST" class="flex flex-col ">
+            <form action={{ route('auth.login') }} method="POST" class="flex flex-col">
                 @csrf {{-- gera um token de segurança para o laravel validar que a requisição é legítima e do próprio
                 site --}}
 
@@ -17,7 +17,7 @@
                         Email
                     </label>
                     <input type="email" name="email" placeholder="seuemail@email.com"
-                        class="bg-white p-2 border-2 @error('email') border-red-500 @enderror">
+                        class="bg-white p-2 habit-shadow-lg @error('email') border-red-500 @enderror">
 
                     @error('email')
                         <p class="text-red-500 text-sm">
@@ -31,7 +31,7 @@
                         Senha
                     </label>
                     <input type="password" name="password" placeholder="******"
-                        class="bg-white p-2 border-2 @error('password') border-red-500 @enderror">
+                        class="bg-white p-2 habit-shadow-lg @error('password') border-red-500 @enderror">
 
                     @error('password')
                         <p class="text-red-500 text-sm">
@@ -40,7 +40,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="bg-white border-2 p-2"> Entrar </button>
+                <button type="submit" class="p-2 bg-habit-orange habit-shadow-lg habit-btn"> Entrar </button>
             </form>
             <p class="text-center mt-2">
                 Ainda não tem uma conta? <a href="{{ route('site.register') }}"
